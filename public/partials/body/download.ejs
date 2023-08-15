@@ -1,0 +1,79 @@
+<div class="unit">
+  <div>
+    <nav>
+      <a class="title" href="/">RTIK <i class="fa-brands fa-tiktok"></i></a>
+      <div>
+        <ul class="nav-items">
+        </ul>
+      </div>
+      <a class="btn" href="#"><i class="fa-solid fa-house"></i></a>
+      <p class="menu-btn btn"><i class="fa-solid fa-bars-staggered"></i></p>
+
+      <div id="mobile_menu" class="menu">
+        <i class="close fa-solid fa-xmark"></i>
+        <div class="menu-items">
+          <a href="/" class="aclose" ><i class="fa-solid fa-house"></i> Home</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="header">
+      <p class="title"><i class="fa-brands fa-tiktok"></i> TikTok Downloader</p>
+      <div class="box" data-aos="zoom-in-down"></div>
+      <div id="formin" class="card">
+        <div class="form">
+          <div class="form-item">
+            <div class="icon-wrapper">
+              <div class="icon-cover">
+                <img
+                  src="<%= rtik.result.cover[0] %>"
+                  alt=""
+                  srcset=""
+                />
+              </div>
+            </div>
+            <hr />
+            <p class="desc">
+              <%= rtik.result.description %>
+            </p>
+            <p class="author-link"><%= rtik.result.author.username %> [<a target="_blank" href="https://www.tiktok.com/@<%= rtik.result.author.username %>"><%= rtik.result.author.nickname %></a>]</p>
+            <hr />
+          </div>
+          <form action="/download" method="GET">
+            <input type="url" name="url" value="<%= url %>" hidden>
+            <input type="text" name="type" value="mp4" hidden>
+            <input type="text" name="id" value="<%= id %>" hidden>
+            <button type="submit" class="button">Download [ MP4 ]</button>
+          </form>
+          <form action="/download" method="GET">
+            <input type="url" name="url" value="<%= url %>" hidden>
+            <input type="text" name="type" value="mp3" hidden>
+            <input type="text" name="id" value="<%= id %>" hidden>
+            <button type="submit" class="button">Download [ MP3 ]</button>
+          </form>
+          <hr />
+          <button class="button" onclick="window.location.href = '/';">Download More..</button>
+          <h5>Bagikan App <i class="fa-regular fa-face-smile"></i></h5>
+          <button class="button" id="share">Share <i class="fa-regular fa-share-from-square"></i></button>
+          <hr />
+        </div>
+      </div>
+    </div>
+
+    <main></main>
+  </div>
+  <footer class="footer">
+    <p class="foot-text">
+      RTikDown by
+      <a href="https://www.instagram.com/raminsta__/" target="_blank"
+        >@RamDev</a
+      >
+    </p>
+  </footer>
+</div>
+<div id="toast">
+  <div id="img"><i class="fa-solid fa-triangle-exclamation"></i></div>
+  <div id="desc">thanks for sharing <i class="fa-regular fa-face-smile"></i></div>
+</div>
+<script src="/js/index.js"></script>
+<script src="/js/script.download.js"></script>

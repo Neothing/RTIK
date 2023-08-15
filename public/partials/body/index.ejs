@@ -1,0 +1,119 @@
+<div class="unit">
+  <div >
+    <nav>
+      <a class="title" href="/">RTIK <i class="fa-brands fa-tiktok"></i></a>
+      <div>
+        <ul class="nav-items">
+          <li><a href="#layanan">Layanan</a></li>
+          <li><a href="#">Projects</a></li>
+          <li><a href="#">Tentang</a></li>
+        </ul>
+      </div>
+      <a class="btn" href="#"><i class="fa-solid fa-house"></i></a>
+      <p class="menu-btn btn"><i class="fa-solid fa-bars-staggered"></i></p>
+
+      <div id="mobile_menu" class="menu">
+        <i class="close fa-solid fa-xmark"></i>
+        <div class="menu-items">
+          <a href="#layanan" class="aclose">Layanan</a>
+          <a href="#">Projects</a>
+          <a href="#">Tentang</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="header">
+      <p class="title"><i class="fa-brands fa-tiktok"></i> TikTok Downloader</p>
+      <div class="box" data-aos="zoom-in-down"></div>
+      <div id="formin" class="card">
+        <form
+          name="formin"
+          action="/download"
+          method="POST"
+          onsubmit="return validateForm()"
+        >
+          <div class="form-item">
+            <label class="required" for="">URL</label>
+            <div class="node">
+              <input
+                id="inputurl"
+                type="url"
+                name="url"
+                placeholder="tiktok url/link"
+              />
+              <button
+                type="button"
+                id="paste"
+                class="button-paste"
+                tooltip="TEMPEL"
+              >
+                <i class="fa-solid fa-clipboard"></i>
+              </button>
+            </div>
+          </div>
+          <button type="submit" class="button" id="download">Download</button>
+        </form>
+      </div>
+    </div>
+
+    <main>
+      <section class="layanan container" id="layanan">
+        <h2>Layanan</h2>
+        <div class="row">
+          <div class="column">
+            <div class="cards">
+              <div class="icon-wrapper">
+                <i class="fa-solid fa-cloud-arrow-down"></i>
+              </div>
+              <h3>Free Downloads!</h3>
+              <p>
+                Download Unlimited TikTok Videos Without a Watermark For
+                Free. Download TikTok videos without any Limit!
+              </p>
+            </div>
+          </div>
+          <div class="column">
+            <div class="cards">
+              <div class="icon-wrapper">
+                <i class="fa-regular fa-circle-play"></i>
+              </div>
+              <h3>Videos & Audios</h3>
+              <p>
+                Download TikTok Videos in MP4 HD & TikTok MP3 from RTIK.
+                TikTok Video Download in MP4 & MP3 Format.
+              </p>
+            </div>
+          </div>
+          <div class="column">
+            <div class="cards">
+              <div class="icon-wrapper">
+                <i class="fa-solid fa-check-to-slot"></i>
+              </div>
+              <h3>Easy Downloads</h3>
+              <p>
+                We're the Fastest TikTok Video Downloader. Download TikTok
+                video without Watermark Easily with RTIK.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+  <footer class="footer">
+    <p class="foot-text">
+      RTikDown by
+      <a href="https://www.instagram.com/raminsta__/" target="_blank"
+        >@RamDev</a
+      >
+    </p>
+  </footer>
+</div>
+<div id="toast">
+  <div id="img"><i class="fa-solid fa-triangle-exclamation"></i></div>
+  <div id="desc">
+    Input tidak sesuai!
+  </div>
+</div>
+<script src="/js/index.js"></script>
+<script type="text/javascript" src="/js/script.index.js"></script>

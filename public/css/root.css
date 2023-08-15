@@ -1,0 +1,67 @@
+@font-face {
+  font-family: "rfont";
+  src: url("/src/retro_computer.ttf");
+}
+
+:root {
+  font-family: "rfont" !important;
+  font-synthesis: none;
+  text-shadow: 1.5px 1.5px #1a1f24;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+
+  --r-c-primary: #7a93ff;
+  --r-c-secondary: #879dfd;
+  --r-c-success: #4dbd74;
+  --r-c-info: #6398de;
+  --r-c-warning: #ffc107;
+  --r-c-danger: #f86c6b;
+  --r-c-dark: #31383f;
+  --r-c-light: #e6edf5;
+  --rc-nav-primary: #292d31;
+  --rc-nav-secondary: #373d44;
+  --rc-border: #23282c;
+  --rc-txt-shadow: #1a1f24;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #3a4149;
+  border: 1px solid #2f353a;
+}
+::-webkit-scrollbar-thumb {
+  background: #343b41;
+  border: 1px solid #2f353a;
+}
+::-webkit-scrollbar-corner {
+  background: #3a4149;
+}
+::-webkit-scrollbar-track-piece the {
+  background: #3a4149;
+}
+::-webkit-resizer {
+  background: #3a4149;
+}
+
+::selection {
+  color: var(--r-c-light);
+  background: var(--r-c-primary);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  scroll-behavior: smooth;
+  background-color: var(--r-c-light);
+}
+
