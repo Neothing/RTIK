@@ -7,6 +7,7 @@ const { load } = require("cheerio");
 const bodyParser = require("body-parser");
 require('dotenv').config()
 const app = express();
+const tik = require("tiktod");
 
 const _tiktokurl = "https://www.tiktok.com";
 const _tiktokapi = (id) =>
@@ -102,11 +103,11 @@ app.get("/", async (req, res) => {
 });
 app.post("/download", async (req, res) => {
   let url = req.body.url;
-  RTIK_API(url).then((rtik) => {
+  tik.download(url)(url).then((rtik) => {
     if (rtik.status == "error") {
-      // res.redirect("/");
+      res.redirect("/");
     } else {
-      let id = "RTik-" + rtik.result.id;
+      let id = "RTik-" + rtik.result.stats.aweme_id;
       console.log(`Starting download: \nURL: ${url}`);
       res.status(200);
       res.render("pages/download", { rtik, url, id });
@@ -123,7 +124,7 @@ app.get("/download", async (req, res) => {
     } else {
       if (type == "mp4") {
         const path = process.cwd() + `/temp/media/${type}/${id}.mp4`;
-        const requ = https.get(rtik.result.video[0], (response) => {
+        const requ = https.get(rtik.result.media, (response) => {
           const file = fs.createWriteStream(path);
           response.pipe(file);
           file.on("error", function (err) {
@@ -146,7 +147,7 @@ app.get("/download", async (req, res) => {
         });
       } else if (type == "mp3") {
         const path = process.cwd() + `/temp/media/${type}/${id}.mp3`;
-        const requ = https.get(rtik.result.music[0], (response) => {
+        const requ = https.get(rtik.result.music.url, (response) => {
           const file = fs.createWriteStream(path);
           response.pipe(file);
           file.on("error", function (err) {
