@@ -103,7 +103,7 @@ app.get("/", async (req, res) => {
 });
 app.post("/download", async (req, res) => {
   let url = req.body.url;
-  tik.download(url)(url).then((rtik) => {
+  tik.download(url).then((rtik) => {
     if (rtik.status == "error") {
       res.redirect("/");
     } else {
@@ -118,7 +118,7 @@ app.get("/download", async (req, res) => {
   let url = req.query.url;
   let type = req.query.type;
   let id = req.query.id;
-  RTIK_API(url).then((rtik) => {
+  tik.download(url).then((rtik) => {
     if (rtik.status == "error") {
       res.redirect("/");
     } else {
