@@ -26,7 +26,7 @@
             <div class="icon-wrapper">
               <div class="icon-cover">
                 <img
-                  src="<%= rtik.result.cover %>"
+                  src="<%= rtik.result.cover[0] %>"
                   alt=""
                   srcset=""
                 />
@@ -34,7 +34,7 @@
             </div>
             <hr />
             <p class="desc">
-              <%= rtik.result.caption %>
+              <%= rtik.result.description %>
             </p>
             <p class="author-link"><%= rtik.result.author.username %> [<a target="_blank" href="https://www.tiktok.com/@<%= rtik.result.author.username %>"><%= rtik.result.author.nickname %></a>]</p>
             <hr />
