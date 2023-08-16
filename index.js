@@ -104,7 +104,7 @@ app.post("/download", async (req, res) => {
   let url = req.body.url;
   RTIK_API(url).then((rtik) => {
     if (rtik.status == "error") {
-      res.redirect("/");
+      // res.redirect("/");
     } else {
       let id = "RTik-" + rtik.result.id;
       console.log(`Starting download: \nURL: ${url}`);
